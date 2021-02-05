@@ -22,15 +22,7 @@ def quadratic(a, b, c):
         print("The roots are imaginary solutions")
         return None
 
-
-# input values for quadratic formula
-a = float(input("enter value of a:"))
-b = float(input("enter value of b:"))
-c = float(input("enter value of c:"))
-
-# apply function
-result = quadratic(a, b, c)
-
-# result with real number solutions
-if result is not None:
-    print(f"The roots are {result[0]} and {result[1]}")
+#test
+print(quadratic(1,2,1))
+print(quadratic(1,4,5))
+print(quadratic(1,5,6))
