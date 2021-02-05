@@ -1,9 +1,8 @@
 import math
 
-# function for finding roots of quadratic equation
-
 
 def quadratic(a, b, c):
+    """function for finding roots of quadratic equation"""
     # if a = 0 then it's not a quadratic formula
     if a == 0:
         print("Invalid quadratic formula")

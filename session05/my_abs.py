@@ -1,5 +1,6 @@
 def my_abs(number):
-    # this function returns absolute value of integers and floating numbers
+    """ this function returns absolute value of integers
+    and floating numbers """
     if isinstance(number, (int, float)):
         if number < 0:
             return -number
