@@ -19,5 +19,5 @@ def calculate_weight_on_moon():
 
     return weight_on_moon
 
-print("Your weight on the Moon is: " calculate_weight_on_moon())
+print("Your weight on the Moon is: ", calculate_weight_on_moon())
 
