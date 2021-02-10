@@ -54,5 +54,5 @@ def weight_on_planet (weight, planet):
         return(f'You weight on {planet} is {venus_weight}')
 
 #test
-weight_on_planet(50, "moon")
+print(weight_on_planet(50, "moon"))
 
