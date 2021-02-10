@@ -9,15 +9,16 @@ Notice:
 """
 
 
-
 def calculate_weight_on_moon():
     """prompts user to input values for weight on earth, converts them to
     weight on moon."""
-    weight_on_earth = (input("Enter your weight (kg): "))
+    #enter mooon weight and convert 
+    weight_on_earth = float(input("Enter your weight (kg): "))
+    #equation
+    weight_on_moon = float(weight_on_earth) * 0.165
 
-    weight_on_moon = weight_on_earth * 0.165
-
+    #return calculated
     return weight_on_moon
 
-print("Your weight on the Moon is: ", calculate_weight_on_moon())
 
+print("Your weight on the Moon is: ", calculate_weight_on_moon())
