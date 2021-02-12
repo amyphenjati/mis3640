@@ -24,9 +24,6 @@ def check_fermat_inputs():
     check_fermat(a, b, c, n)
 
 
-print(check_fermat_inputs())
-
-
 # exercise1.2.1
 
 
@@ -55,6 +52,3 @@ def get_bmit_category():
         print(f"Your bmi is {bmi:.1f}. You are overweight.")
     else:
         print(f"Your bmi is {bmi:.1f}. You are obese.")
-
-
-print(get_bmit_category())
