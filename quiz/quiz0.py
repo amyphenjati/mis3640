@@ -9,19 +9,23 @@ Notice:
 """
 
 
-# def calculate_weight_on_moon():
-#     """prompts user to input values for weight on earth, converts them to
-#     weight on moon."""
-#     #enter mooon weight and convert 
-#     weight_on_earth = float(input("Enter your weight (kg): "))
-#     #equation
-#     weight_on_moon = float(weight_on_earth) * 0.165
-
-#     #return calculated
-#     return weight_on_moon
+moonweight_multiple = 0.165
 
 
-# print(f'Your weight on the Moon is: ", {calculate_weight_on_moon()}')
+def calculate_weight_on_moon():
+    """prompts user to input values for weight on earth, converts them to
+    weight on moon."""
+    # enter earth weight
+    weight_on_earth = float(input("Enter your weight (kg): "))
+    # equation
+    weight_on_moon = (weight_on_earth) * moonweight_multiple
+    # calculated result
+    print(f"Your weight on moon is {weight_on_moon}")
+
+
+# test if function works
+calculate_weight_on_moon()
+
 
 """
 Question 2:
@@ -35,24 +39,30 @@ Notice:
 3. Write your own test code, i.e. call the function.
 """
 
+moon_multiple = 0.165
+mars_multiple = 0.378
+venus_multiple = 0.904
 
-def weight_on_planet (weight, planet):
+
+def weight_on_planet(weight, planet):
     """defines weight on each planet by using weight on earth"""
-    #moon
+    # moon
     if planet == "moon":
-        moon_weight = weight * 0.165
-        return(f'You weight on {planet} is {moon_weight}')
+        moon_weight = weight * moon_multiple
+        return f"You weight on {planet} is {moon_weight}"
 
-    #mars
+    # mars
     elif planet == "mars":
-        mars_weight = weight * 0.378
-        return(f'You weight on {planet} is {mars_weight}')
+        mars_weight = weight * mars_multiple
+        return f"You weight on {planet} is {mars_weight}"
 
-    #venus
+    # venus
     elif planet == "venus":
-        venus_weight = weight * 0.904
-        return(f'You weight on {planet} is {venus_weight}')
+        venus_weight = weight * venus_multiple
+        return f"You weight on {planet} is {venus_weight}"
+    else:
+        return 0
 
-#test
+
+# test
 print(weight_on_planet(50, "moon"))
-
