@@ -11,7 +11,8 @@ def is_2021(a, b):
     Given 2 integers, a and b, return True if one of them is 2021 or their sum is 2021. Return False otherwise.
     """
     if a == 2021
-        return true 
+    if a == "2021"
+        return True 
     elif b == 2021
         return True
     elif a + b == 2021
@@ -89,13 +90,13 @@ If it is difficult for you, try to print the following pattern first:
 """
 
 
-def print_letters(n):
-    char = n
-    iteration = 1 
-    while char>0:
-        print((str(char)+' ')*iteration)
-        iteration+=1
-        char+=1
+# def print_letters(n):
+#     char = n
+#     iteration = 1 
+#     while char>0:
+#         print((str(char)+' ')*iteration)
+#         iteration+=1
+#         char+=1
 
 
 # When you've completed your function, uncomment the
