@@ -3,7 +3,7 @@ import random
 
 def number_guessing_game():
     """this function performs the guess the number game"""
-    guessesTaken = 0  # create variable to store number of guesses, starting from 0
+    guess_taken = 0  # create variable to store number of guesses, starting from 0
 
     print("Hello! What is your name?")  # input name of player
     myName = input(">>")
@@ -11,11 +11,11 @@ def number_guessing_game():
     number = random.randint(1, 20)  # generate a random number between 1-20
     print(f"Well, {myName}, I am thinking of a number between 1 and 20.")
 
-    while guessesTaken < 6:  # if less than 6 guesses, repeat the following steps
+    while guess_taken < 6:  # if less than 6 guesses, repeat the following steps
         print("Take a guess.")
         guess = int(input(">>"))
 
-        guessesTaken = guessesTaken + 1  # count number of guesses
+        guess_taken = guess_taken + 1  # count number of guesses
 
         # output of guesses if not correct
         if guess < number:
@@ -26,7 +26,9 @@ def number_guessing_game():
 
         # output if guess correctly
         else:
-            print(f"Good job, {myName}! You guessed my number in {guessesTaken} guesses!")
+            print(
+                f"Good job, {myName}! You guessed my number in {guess_taken} guesses!"
+            )
             break
 
     if guess != number:  # if exceed 6 guesses
