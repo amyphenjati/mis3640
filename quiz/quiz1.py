@@ -84,18 +84,34 @@ If it is difficult for you, try to print the following pattern first:
 """
 
 
-# def print_letters(n):
-#     char = n
-#     iteration = 1
-#     while char>0:
-#         print((str(char)+' ')*iteration)
-#         iteration+=1
-#         char+=1
+def print_letters(n):
+    """Function to demonstrate printing pattern of alphabets"""
+
+    # initializing value corresponding to 'a'
+    num = 97
+
+    # outer loop to print number of rows, n
+    for i in range(0, n):
+
+        # inner loop for number of columns
+        # values changing acc. to outer loop
+        for j in range(0, i + 1):
+
+            # converting to char
+            ch = chr(num)
+
+            # printing char value
+            print(ch, end=" ")
+
+        # incrementing number
+        num += 1
+
+        # ending line after each row
+        print("\r")
 
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
-
 
 print_letters(5)
 # expect:
