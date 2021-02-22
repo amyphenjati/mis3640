@@ -10,16 +10,10 @@ def is_2021(a, b):
     """
     Given 2 integers, a and b, return True if one of them is 2021 or their sum is 2021. Return False otherwise.
     """
-    if a == 2021
-    if a == "2021"
-        return True 
-    elif b == 2021
-        return True
-    elif a + b == 2021
+    if a == 2021 or b == 2021 or a + b == 2021:
         return True
     else:
-        break
-
+        return False
 
 
 # When you've completed your function, uncomment the
@@ -45,15 +39,15 @@ For example: if n is 5, the average is (1*1*1 + 2*2*2 + ... + 5*5*5)/5 = 45
 """
 
 
-# def calculate_avg(n):
-#     """
-#     Given integer N, return the average of cubes of all the integers between 1 and N (inclusive).
-#     """
-#     result = 0
-#     count = 0
-#     for i in range(1, n+1, 2): # range is always 1 less than what the number is, if you put 10, would only do 9 loops.
-#         result = result + (i*i*i)
-#     return result/count
+def calculate_avg(n):
+    """
+    computes the average of cubes of all
+    integers between 1 and n (inclusive)"""
+    count = 0
+    for i in range(1, n + 1):
+        average_of_cubes = i * i * i
+        count += average_of_cubes
+    return count / n
 
 
 # # When you've completed your function, uncomment the
@@ -92,7 +86,7 @@ If it is difficult for you, try to print the following pattern first:
 
 # def print_letters(n):
 #     char = n
-#     iteration = 1 
+#     iteration = 1
 #     while char>0:
 #         print((str(char)+' ')*iteration)
 #         iteration+=1
