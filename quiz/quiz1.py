@@ -107,7 +107,7 @@ def print_letters(n):
         num += 1
 
         # ending line after each row
-        print("\r")
+        print()
 
 
 # When you've completed your function, uncomment the
