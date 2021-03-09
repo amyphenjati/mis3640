@@ -6,7 +6,6 @@ def sumall(*args):
     return sum(args)
 
 
-
 def main():
     print(sumall(1, 2, 3))
     print(sumall(1, 2, 3, 4, 5))
