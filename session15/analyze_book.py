@@ -90,14 +90,21 @@ def subtract(d1, d2):
     """Returns a dictionary with all keys that appear in d1 but not d2.
     d1, d2: dictionaries
     """
-    pass
+    dic = {}
+    for key in d1:
+        if key not in d2:
+            dic[key] = None
+    return dic
 
 
 def random_word(hist):
     """Chooses a random word from a histogram.
     The probability of each word is proportional to its frequency.
     """
-    pass
+    t = []
+    for word, freq in hist.items():
+        t.extend([word] * freq)
+    return random.choice(t)
 
 
 def main():
@@ -111,16 +118,16 @@ def main():
     for freq, word in t[0:20]:
         print(word, "\t", freq)
 
-    # words = process_file('words.txt', skip_header=False)
+    words = process_file('data/words.txt', skip_header=False)
 
-    # diff = subtract(hist, words)
-    # print("The words in the book that aren't in the word list are:")
-    # for word in diff.keys():
-    #     print(word, end=' ')
+    diff = subtract(hist, words)
+    print("The words in the book that aren't in the word list are:")
+    for word in diff.keys():
+        print(word, end=' ')
 
-    # print("\n\nHere are some random words from the book")
-    # for i in range(100):
-    #     print(random_word(hist), end=' ')
+    print("\n\nHere are some random words from the book")
+    for i in range(100):
+        print(random_word(hist), end=' ')
 
 
 if __name__ == "__main__":
