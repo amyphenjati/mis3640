@@ -39,7 +39,7 @@ def get_current_temp():
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-print(get_current_temp())
+# print(get_current_temp())
 
 ## Expected output: 87.44
 
@@ -57,18 +57,23 @@ def replace_vowels(data):
     Given a string, replace vowels in the string with numbers based on rules
     defined above, and return the new string
     """
-    pass
+    for output in rules:
+        rules[output] = str(rules[output])  # change given output numbers into strings
+    for vowels in data:
+        if vowels in rules.keys():  # get the letters from the dictionary
+            data = data.replace(vowels, rules[vowels])  # replace by the rule
+    return data
 
 
-# # Uncomment the following lines to test
+# # # Uncomment the following lines to test
 # s1 = "babson college"
 # s2 = "how are you?"
 # print(replace_vowels(s1))
 # print(replace_vowels(s2))
 
-## Expected output:
-## b4bs0n c0ll3g3
-## h0w 4r3 y07?
+# # Expected output:
+# # b4bs0n c0ll3g3
+# # h0w 4r3 y07?
 
 
 """
@@ -95,6 +100,11 @@ def read_cities_to_list():
         data = json.load(f)  # load json file into a dictionary named data
         pprint.pprint(data)
     # You can write code below
+    cities = []  # new list
+    MA_set = data["responsePayloadData"]["data"]["MA"]  # narrow down to only MA
+    for i in MA_set:
+        cities.append(i["city"])  # add city name into list
+    return cities
 
 
 # When you've completed your function, uncomment the
@@ -122,7 +132,17 @@ def first_letters(cities):
     cities: a list of city names
     Return: a dictionary of letter: city pairs
     """
-    pass
+    dic = {}  # new dictionary
+    for city in city_names:
+        if city[0] not in dic.keys():
+            dic[city[0]] = []  # add alphabet to beginning of the list
+            dic[city[0]].append(city)  # add city name for that alphabet
+        else:
+            if (
+                city not in dic[city[0]]
+            ):  # if the first alphabet already in the dictionary
+                dic[city[0]].append(city)  # add the city name ot the list
+    return dic
 
 
 # When you've completed your function, uncomment the
@@ -142,3 +162,27 @@ Your function should first print the longest list of cities with same first
 letter, followed by the second longest, and so on.
 --------------------------------------------------------------------------
 """
+
+
+def print_longer_list():
+    """sort dictionary from Q4:
+    from alphabet with the longest list of cities"""
+    dic = {}  # new dictionary
+    for city in city_names:
+        if city[0] not in dic.keys():
+            dic[city[0]] = []  # add alphabet to beginning of the list
+            dic[city[0]].append(city)  # add city name for that alphabet
+        else:
+            if (
+                city not in dic[city[0]]
+            ):  # if the first alphabet already in the dictionary
+                dic[city[0]].append(city)  # add the city name ot the list
+
+    new_longest_list = sorted(dic, key=lambda s: len(dic.get(s)), reverse=True) # new way to sort the dictionary
+    for i in range(len(new_longest_list)):
+        print("{}: {}".format(new_longest_list[i], dic[new_longest_list[i]]))
+
+
+city_names = read_cities_to_list()
+first_letters(city_names)
+print_longer_list()
