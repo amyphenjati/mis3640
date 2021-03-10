@@ -164,7 +164,7 @@ letter, followed by the second longest, and so on.
 """
 
 
-def print_longer_list():
+def sorted_list():
     """sort dictionary from Q4:
     from alphabet with the longest list of cities"""
     dic = {}  # new dictionary
@@ -185,4 +185,4 @@ def print_longer_list():
 
 city_names = read_cities_to_list()
 first_letters(city_names)
-print_longer_list()
+sorted_list()
