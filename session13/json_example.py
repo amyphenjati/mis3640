@@ -1,6 +1,5 @@
 import urllib.request
 import json
-import
 
 APIKEY = "22499eddd60c8b6d76550fa01c151bcc"
 city = "Wellesley"
