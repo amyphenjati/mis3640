@@ -15,3 +15,6 @@ with open('data/output.txt', 'w') as fout:
     fout.write(line1)
     line2 = "Before you call him a man?\n"
     fout.write(line2)
+
+
+f = open
