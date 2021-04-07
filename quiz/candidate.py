@@ -48,18 +48,16 @@ class Candidate:
         votes: integer, representing number of votes
         """
         self.name = name  #  candidate name
+        self.votes = votes  #  vote count
 
         if winning_states is None:  #  when candidate has no win, return empty list
             self.winning_states = []
         else:
             self.winning_states = winning_states  #  state candidate is winning
-
-        total_vote = []
-        for i in self.winning_states:
-            total_vote.append(ELECTORAL_VOTES[i])
-        self.votes = sum(
-            total_vote
-        )  # total number of electoral votes in all state of a candidate
+            for i in winning_states:
+                self.votes += ELECTORAL_VOTES[
+                    i
+                ]  # total number of electoral votes in all state of a candidate
 
     # A __str__ method that returns a string representation of this candidate, including name and winning state(s).
     def __str__(self):
