@@ -47,12 +47,12 @@ class Candidate:
         winning_states: a list of strings representing initial winning state(s) (even before voting).
         votes: integer, representing number of votes
         """
-        self.name = name
+        self.name = name  #  candidate name
 
-        if winning_states is None:
+        if winning_states is None:  #  when candidate has no win, return empty list
             self.winning_states = []
         else:
-            self.winning_states = winning_states
+            self.winning_states = winning_states  #  state candidate is winning
 
         total_vote = []
         for i in self.winning_states:
@@ -67,18 +67,19 @@ class Candidate:
         including name and winning state(s).
         """
         if len(self.winning_states) > 0:
-            return f"{self.name} has won {', '.join(self.winning_states)}."
+            return f"{self.name} has won {', '.join(self.winning_states)}."  #  return candidate and their winning states
         else:
-            return f"{self.name} has not won any state yet."
+            return f"{self.name} has not won any state yet."  # return when candidate has no winning state
 
     # A method named win_state that takes a string of state abbreviation, adds it to winning_states and updates votes.
     def win_state(self, state):
         """Adds a state to winning_states and updates votes.
         state: a string of state abbreviation
         """
-        self.winning_states.append(state)
-        self.votes += ELECTORAL_VOTES[state]
-        # print(self.votes)
+        self.winning_states.append(
+            state
+        )  #  add state to the winning state list of a candidate
+        self.votes += ELECTORAL_VOTES[state]  #  update vote counts
 
     # A special method that overloads the operator > to compare votes of two candidates.
     def __gt__(self, other):  #  __gt__ is a method for implementation of >
@@ -86,7 +87,7 @@ class Candidate:
         Returns True if 'self' candidate has more electoral votes than the 'other'candidate
         output: boolean
         """
-        return self.votes > other.votes
+        return self.votes > other.votes  # return True when arguement is correct
 
 
 ###########################################
