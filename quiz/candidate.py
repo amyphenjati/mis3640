@@ -47,11 +47,17 @@ class Candidate:
         votes: integer, representing number of votes
         """
         self.name = name
+        
         if winning_states is None:
             self.winning_states = []
         else:
             self.winning_states = winning_states
-        self.votes = votes
+            
+        # self.votes = votes
+        total_vote = []
+        for i in self.winning_states:
+            total_vote.append(ELECTORAL_VOTES[i])
+        self.votes = sum(total_vote)  # total number of electoral votes in all state of a candidate 
 
     # A __str__ method that returns a string representation of this candidate, including name and winning state(s).
     def __str__(self):
@@ -74,10 +80,11 @@ class Candidate:
 
     # A special method that overloads the operator > to compare votes of two candidates.
     def __gt__(self, other):  #  __gt__ is a method for implementation of >
-        if self.votes > other.votes:
-            return True
-        else:
-            return False
+        """
+        Returns True if 'self' candidate has more electoral votes than the 'other'candidate
+        output: boolean
+        """
+        return self.votes > other.votes
 
 
 ###########################################
