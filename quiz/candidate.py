@@ -10,6 +10,7 @@
 
 #################################
 # Expected Results
+
 # Before voting:
 # Donald Trump has won TX, FL.
 # Joe Biden has won CA, MA.
@@ -47,17 +48,18 @@ class Candidate:
         votes: integer, representing number of votes
         """
         self.name = name
-        
+
         if winning_states is None:
             self.winning_states = []
         else:
             self.winning_states = winning_states
-            
-        # self.votes = votes
+
         total_vote = []
         for i in self.winning_states:
             total_vote.append(ELECTORAL_VOTES[i])
-        self.votes = sum(total_vote)  # total number of electoral votes in all state of a candidate 
+        self.votes = sum(
+            total_vote
+        )  # total number of electoral votes in all state of a candidate
 
     # A __str__ method that returns a string representation of this candidate, including name and winning state(s).
     def __str__(self):
@@ -68,15 +70,15 @@ class Candidate:
             return f"{self.name} has won {', '.join(self.winning_states)}."
         else:
             return f"{self.name} has not won any state yet."
-            
+
     # A method named win_state that takes a string of state abbreviation, adds it to winning_states and updates votes.
     def win_state(self, state):
         """Adds a state to winning_states and updates votes.
         state: a string of state abbreviation
         """
-        vote_count = ELECTORAL_VOTES
         self.winning_states.append(state)
-        self.votes += vote_count[state]
+        self.votes += ELECTORAL_VOTES[state]
+        # print(self.votes)
 
     # A special method that overloads the operator > to compare votes of two candidates.
     def __gt__(self, other):  #  __gt__ is a method for implementation of >
